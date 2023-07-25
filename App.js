@@ -3,38 +3,44 @@
 import React from 'react';
 import  ReactDOM  from 'react-dom/client';
 
-const heading1 = React.createElement(
-    "h1",
-    {
-        id: "title",
-        className: "header_tag",
-        style: {
-            color: "red",
-            
-        },
-        key :"h1-tag"
-    },
-    "heading 1"
-);
 
-// console.log(heading1)
-const heading2 = React.createElement("h2", {key : "h2-tag"}, "heading 2");
+const Heading1 = ()=> (
+<h1 id="title" key="h2">
+    Namaste react
+</h1>
+)
 
-let heading3 = React.createElement("h3",{key:"h3-tag"},"TCS Zindabad");
+const HeaderComponent1 = () => {
+    return(
+        <div>
+        {/* <Heading1/> */}
+        {Heading1()}
+        <h1>hello react bosh </h1>
+        </div>
+    )
+}
+
+const HeaderComponent2 = () => <h2>HeaderComponent 2 is also works  </h2>
 
 
-let li1 = React.createElement("li",{},"about us");
-let li2 = React.createElement("li",{},"home");
+const HeaderComponent3 = () =>(
+    <div>
+        HeaderComponent 3 is also works fine 
+    </div>
+)
 
-let ul = React.createElement("ul",{},[li1,li2,React.createElement("li",{},"payment")]);
-const container = React.createElement("div", {
-    className:"container"
-}, [heading1, heading2,heading3,ul]);
+const HeaderComponent4 = function (){
+    return(
+    <>
+        <h2>HeaderComponent 4 this is also works fine</h2>
+    </>
+    )
+}
 
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(container);
+root.render(<HeaderComponent1/>);
 
 
 

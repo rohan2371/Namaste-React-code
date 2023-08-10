@@ -1,0 +1,155 @@
+JSX have only one parent 
+
+const ExComponent = () =>{
+    retunr(
+        <h2>Rohan konkatti</h2>
+        <h1>Learning React is Fun </h1> // this throws error here i have two parents 
+    )
+}
+
+// for the above error for  h2,h1  we can add one more div as  parent 
+
+const ExComponent = () =>{
+    return(
+        <div>
+             <h2>Rohan konkatti</h2>
+            <h1>Learning React is Fun </h1> // this don't throw any error here i have only 
+            // one parent 
+        </div>
+    )
+}
+
+// but problem in above solution is that create one more div so what if i don't want any div or parent here i can use React.Fragment that works same not create div 
+// React.Fragment is like an  empty tag 
+
+ const ExComponent = () =>{
+    return(
+        <React.Fragment>
+            <h2>Rohan konkatti </h2>
+            <h1>Learning React is Fun </h2>
+        </React.Fragment>
+    )
+ }
+
+ // writing React.Fragment one more way is  <> </> both are same 
+
+
+
+
+const ExComponent = () =>{
+    return(
+        <React.Fragment> 
+            <div> </div>
+            <div></div> // this is valid 
+        </React.Fragment>
+    )
+}
+
+// this jsx nothing but react element 
+const JSX = (
+    <React.Fragment> 
+        <h1>JSX</h1>
+        <h2> Second JSX</h2>
+    <React.Fragment>
+)
+
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(JSX); // we directly render react elements 
+
+
+for ReactComponent there is different way to render 
+let's create a react component name as Title
+
+const Title = () =>{
+    return(
+        <h2>React Component </h2
+    )
+}
+
+root.render(<Title/>);
+
+
+// way to give styling in react js -> 1. inline css , 2. external css
+1.Inline css -> we give inline styling using javascript object  
+
+// i am creating one object 
+const styleObj = {
+    border : "1px solid red";
+}
+const funcComponet = () =>{
+    return(
+        <div style = {styleObj}>
+
+        </div>
+    )
+}
+// another way of writing inline style is directly using javascript object as props 
+
+const funcComponent = () =>{
+    retunr(
+        <div style={{border : "1px solid red"}}>
+        
+        </div>
+    )
+}
+
+
+// config Driven ui : when u build a real world application so u want website should work in dearadun , kolkata, solapur, pune so we need differnent website for each city the answer is no , 
+we control our frontend using config that's this is know as config driven ui 
+
+// confict Driven ui 
+const restrauntlist = [ {
+  name :"Burger King",
+  image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWc8IIR-ZCjniuXgtFeOeYTnLXHgNORvczJg",
+  cusines :["Burger","American"],
+  rating : "4.2",
+},
+{
+  name :"Burger King",
+  image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWc8IIR-ZCjniuXgtFeOeYTnLXHgNORvczJg",
+  cusines :["Burger","American"],
+  rating : "4.2",
+},
+{name :"Burger King",
+  image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWc8IIR-ZCjniuXgtFeOeYTnLXHgNORvczJg",
+  cusines :["Burger","American"],
+  rating : "4.2",
+}
+]
+
+basically backend control what type of website should look in kolkata , solapur if example 
+solapur have some discount and kolkata is not have any discount so we control using backend data 
+
+
+
+
+// reconsilation algorithm 
+// diff algorithm 
+// react fibre 
+
+
+homework -> why we don't use index as key 
+// never use index as key 
+
+
+// no key(it is not acceptable ) <<<<<<<<<<<<<<< index key (use only if don't have anything) << unique key (it is best practice)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

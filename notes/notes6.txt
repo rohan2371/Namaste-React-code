@@ -1,0 +1,52 @@
+there are two ways to export 
+1. export default function name  -> it export only one function in file 
+
+let suppose if u want to export multiple functions we use -> exporting by name  
+2. export const  fun = () = {};
+
+
+// default import 
+import Header from './components/Header';
+// Name import 
+import  {Title}  from "./components/Header";
+or
+import  {Title,Header}  from "./components/Header";
+
+
+there one more way to import 
+let use suppose there are 3-4 functions in single file if u don't want to remember the name what we can import all using the * 
+
+import * as obj from "./components/Header";
+
+we can access those functions by  obj 
+<obj.Title/> 
+obj.Header 
+and many more functions 
+
+
+there is one more way 
+let suppose two functions 
+export default Header means exported by default and another one exported by name 
+
+export const Title = () =>{return ()}
+
+how i can import both things in one line so , syntex look like 
+
+import Header, {Title} from './components/header';
+
+
+// try to use export default is recommended  fo good practice 
+
+Q. What is state 
+Q. What is hooks : hook is nothing but a normal javascript  function 
+
+Q. what is useState -> it is used to create a new state 
+useState return array -> the first element is state variable and 2nd element is function that changest the state 
+
+const [searchText,setSearchText] = useState("");
+in bracket we write default state variable value 
+
+one more way to defind
+
+const searchvar = useState("");
+const [searchText,setSearchText] = searchvar;

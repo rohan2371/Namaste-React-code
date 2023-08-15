@@ -1,87 +1,7 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-/**
-             Header 
-                - Logo
-                - Nav Item
-                - Cart
-
-             Body
-                - search bar
-                - restrauntlist 
-                        - Image 
-                        - Name
-                        - Rating 
-                        - Cusines
-             Footer
-                    - Links
-                    
-**/
-
-const Title = () => (
-    <a href="/">
-  <img className="logo" alt = "logo" src="https://i.pinimg.com/474x/e6/17/f1/e617f1bfb9af4d9cf132cd3dec0da072.jpg"/>
-  </a>
-);
-
-const HeaderComponent = () => {
-  return (
-    <div className="header">
-      <Title/>
-      <div className="nav-items">
-        <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
-            <li>Cart</li>
-
-        </ul>
-      </div>
-    </div>
-  );
-};
+export const IMG_CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 
 
-const config = [
-  {
-    type : "carousel",
-    cards :[
-      {
-        offername : "50% off",
-
-      },
-      {
-        offername : "no delivery charge"
-      }
-    ]
-  },
-  {
-    type : "restraurants",
-    cards :[
-      {
-        name :"Burger King",
-        image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWc8IIR-ZCjniuXgtFeOeYTnLXHgNORvczJg",
-        cusines :["Burger","American"],
-        rating : "4.2",
-      },
-      {
-        name :"Burger King",
-        image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWc8IIR-ZCjniuXgtFeOeYTnLXHgNORvczJg",
-        cusines :["Burger","American"],
-        rating : "4.2",
-      },
-      {name :"Burger King",
-        image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWc8IIR-ZCjniuXgtFeOeYTnLXHgNORvczJg",
-        cusines :["Burger","American"],
-        rating : "4.2",
-      }
-    ]
-  }
-]
-
-// config Driven ui 
-const restrauntlist = [ 
+export const restrauntlist = [ 
 
   {
     type: "restaurant",
@@ -814,83 +734,45 @@ const restrauntlist = [
   },
 ]
 
-// Optional chaining = ? 
-// const RestrauntCard = ({restaurant}) =>{
-
-//   return(
-//     <div className="card">
-//       <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+restaurant.data?.cloudinaryImageId}/>
-//       <h2>{restaurant.data?.name}</h2>
-//       <h3>{restaurant.data?.cuisines.join(",")}</h3>
-//       <h4>{restaurant.data?.lastMileTravelString} minutes</h4>
-//     </div>
-//   )
-// }
 
 
-const RestrauntCard = ({name,cloudinaryImageId,cuisines}) =>{
-
-  // const {name,cloudinaryImageId,cuisines,lastMileTravelString} = restaurant;
-  return(
-    <div className="card">
-      <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+cloudinaryImageId}/>
-      <h2>{name}</h2>
-      <h3>{cuisines.join(",")}</h3>
-      {/* <h4>{lastMileTravelString} minutes</h4> */}
-    </div>
-  )
-}
-
-// props - properties  
-const Body = () => {
-    return (
-        <div className="restraurant-list">
-          {/* <RestrauntCard name = {restrauntlist[0].data.name}
-          cloudinaryImageId = {restrauntlist[0].data.cloudinaryImageId}
-          cuisines = {restrauntlist[0].data.cuisines}/> */}
-          {/* <RestrauntCard {...restrauntlist[0].data}/>
-          <RestrauntCard {...restrauntlist[1].data}/>
-          <RestrauntCard {...restrauntlist[2].data}/>
-          <RestrauntCard {...restrauntlist[3].data}/>
-          <RestrauntCard {...restrauntlist[4].data}/>
-          <RestrauntCard {...restrauntlist[5].data}/> */}
 
 
-          {
-            restrauntlist.map((restaurant) =>{
-              return <RestrauntCard  {...restaurant.data} key={restaurant.data.id}/>
-            })
-          }
-          
-        
-        </div>
-    )
-}
 
-const Footer = () => {
-    return(
-        <div>
-            <h4>Footer</h4>
-        </div>
-    )
-}
-const AppLayout = () => {
-  return (
-    <React.Fragment>
-        <HeaderComponent/>
-        <Body/>
-        <Footer/>
-    </React.Fragment>
-  )
-};
 
-const jsx = (
-  <div style={{backgroundColor:"yellow"}}>
-    <h1>JSX</h1>
-    <h1>Second JSX</h1>
-  </div>
-)
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout/>);
+export const config = [
+  {
+    type : "carousel",
+    cards :[
+      {
+        offername : "50% off",
 
-// babel-plugin-transform-remove-console
+      },
+      {
+        offername : "no delivery charge"
+      }
+    ]
+  },
+  {
+    type : "restraurants",
+    cards :[
+      {
+        name :"Burger King",
+        image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWc8IIR-ZCjniuXgtFeOeYTnLXHgNORvczJg",
+        cusines :["Burger","American"],
+        rating : "4.2",
+      },
+      {
+        name :"Burger King",
+        image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWc8IIR-ZCjniuXgtFeOeYTnLXHgNORvczJg",
+        cusines :["Burger","American"],
+        rating : "4.2",
+      },
+      {name :"Burger King",
+        image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWc8IIR-ZCjniuXgtFeOeYTnLXHgNORvczJg",
+        cusines :["Burger","American"],
+        rating : "4.2",
+      }
+    ]
+  }
+]

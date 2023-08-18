@@ -1,0 +1,72 @@
+monolith : 
+A long time ago there is single application let suppose application build using java 
+-simple example is opethic software services all application based on monolithic application
+- there is use to be just one project and this one project every api exists only on this application 
+- it is also know as monolith 
+advantage : 
+don't need to maintain different project and repository but this 
+
+microservice :
+instead of having just one project we now have small small different projects  
+-ui project
+-backend api project
+-notification project
+-logs project
+-authetication project-> login and logout 
+
+
+advantages : 
+- easier to test 
+-easier to make changes 
+-easier to  maintain 
+-separtion of concern 
+
+
+- our this react applications lies on -> ui microservice architecture  
+
+
+API : two ways to call api in react 
+1. when user loads website call the  api and render the page ( Loads => Api=>render)
+2. loads => render the page or show something to user  => then call api => update ui 
+
+and 2nd method is best  
+// if you don't want to call after re-render then use useEffect hook 
+// pass in the dependencies array into it 
+
+useEffect = (()=>{
+    console.log"render in use effect");
+},[])
+
+
+1. if useEffect don't have any dependencies then it just called the once 
+2. useEffect call after the render 
+op : first render call
+     second useEffect call
+
+
+flow of useEffect and render will be lookl like 
+-> render 
+   useEffect
+   render 
+
+ shimmer ui :  If you have ever used a web or mobile app that takes some time to load data from a server, you might have seen a loading spinner or a progress bar that indicates that something is happening. While these are common ways to show loading states, they are not very engaging or informative for the user. They don’t tell the user what kind of content is being loaded, how long it will take, or what to expect next.
+
+A better way to show loading states is to use a shimmer UI. A shimmer UI is a version of the UI that doesn’t contain actual content, but instead mimics the layout and shapes of the content that will eventually appear. It uses a gradient animation that creates a shimmering effect over the placeholders, giving the user a sense of motion and progress
+
+
+
+
+ Topic ->  Conditional Rendering 
+if restaurant is empty load => shimmer ui 
+if restaurant has data then load data ui 
+
+  // SearchText is local state variable and
+  const [searchText, setSearchText] = useState(""); // useState to create state variable
+  // useState return array -> the first element of the array is state variable and
+  // the second element is function that changes the state variable
+  // good convention to write setVaraiblename
+  // react one way data binding
+
+
+  homework 
+  1. jsx curly barces
